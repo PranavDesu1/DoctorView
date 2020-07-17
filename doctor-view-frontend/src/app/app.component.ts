@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Patient } from '../app/Models/Patient'
+import { PatientheaderComponent } from './patientheader/patientheader.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'doctor-view-poc';
+
+  selectedPatient: Patient;
+
+  patientChangedHandler(patient: Patient){
+    this.selectedPatient = patient;
+  }
 }

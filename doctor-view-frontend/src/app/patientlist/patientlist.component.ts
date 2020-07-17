@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Patient } from '../Models/Patient'
 import { PATIENTS } from '../Mocks/MockPatients'
 import { FormsModule } from '@angular/forms'
@@ -9,9 +9,9 @@ import { FormsModule } from '@angular/forms'
   styleUrls: ['./patientlist.component.css']
 })
 export class PatientlistComponent implements OnInit {
+  @Output() patientChanged: EventEmitter<Patient> = new EventEmitter();
 
   patients = PATIENTS;
-  selectedPatient: Patient;
 
   constructor() { }
 
@@ -19,6 +19,6 @@ export class PatientlistComponent implements OnInit {
   }
 
   onSelect(patient: Patient){
-    this.selectedPatient = patient;
+    this.patientChanged.emit(patient);
   }
 }
