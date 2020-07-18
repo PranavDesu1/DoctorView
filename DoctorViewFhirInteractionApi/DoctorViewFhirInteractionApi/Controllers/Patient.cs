@@ -1,6 +1,5 @@
 ﻿namespace DoctorViewFhirInteractionApi.Controllers
 {
-    using System.Collections.Generic;
     using System.Net;
     using DoctorViewFhirInteractionApi.Interactions;
     using Microsoft.AspNetCore.Mvc;
