@@ -18,7 +18,7 @@
 
         [HttpGet]
         [Route("search")]
-        [ProducesResponseType(typeof(Patient),(int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Models.Patient),(int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(void), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(void),(int)HttpStatusCode.Forbidden)]
         public IActionResult GetPatients(string searchString)

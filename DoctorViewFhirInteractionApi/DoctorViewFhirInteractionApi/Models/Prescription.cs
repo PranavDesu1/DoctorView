@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using System.Linq;
+using Newtonsoft.Json;
 
 namespace DoctorViewFhirInteractionApi.Models
 {
@@ -21,5 +23,21 @@ namespace DoctorViewFhirInteractionApi.Models
 
         [JsonProperty(PropertyName = "enddate")]
         public string EndDate { get; set; }
+
+        public static explicit operator Prescription(Hl7.Fhir.Model.MedicationRequest obj)
+        {
+            var dose = (Hl7.Fhir.Model.Quantity)obj.DosageInstruction.FirstOrDefault()?.Dose;
+            Prescription output = new Prescription()
+            {
+                Medicine = "",
+                Dose = $"{dose?.Value}" + $"{dose?.Unit}",
+                Frequency = $"{obj.DosageInstruction.FirstOrDefault()?.MaxDosePerAdministration?.Value}" +
+                            $"{obj.DosageInstruction.FirstOrDefault()?.MaxDosePerAdministration?.Unit}",
+                Strength = $"{dose?.Value}" + $"{dose?.Unit}",
+                StartDate = $"{obj.AuthoredOn}",
+                EndDate = ""
+            };
+            return output;
+        }
     }
 }
