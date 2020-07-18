@@ -1,0 +1,9 @@
+.badge-pill{
+    border-radius: 10rem;
+    margin-right: 4%;
+    line-height: 2;
+}
+
+.borderless{
+    border:0em;
+}

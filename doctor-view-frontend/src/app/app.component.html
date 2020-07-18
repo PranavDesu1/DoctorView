@@ -1,8 +1,12 @@
-<div>
-    <app-patientlist (patientChanged)="patientChangedHandler($event)"></app-patientlist>
-</div>
-<div>
-    <app-patientheader [patient]="selectedPatient"></app-patientheader>
-
-    <app-demographics [patient]="selectedPatient"></app-demographics>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <app-patientlist (patientChanged)="patientChangedHandler($event)"></app-patientlist>
+        </div>
+        <div class="col-8">
+            <app-patientheader [patient]="selectedPatient"></app-patientheader>
+            <app-diagnosis [patient]="selectedPatient"></app-diagnosis>
+            <app-prescription [patient]="selectedPatient"></app-prescription>
+        </div>
+    </div>
 </div>
