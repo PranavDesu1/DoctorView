@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { DemographicsComponent } from './demographics/demographics.component';
 import { DiagnosisComponent } from './diagnosis/diagnosis.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
+import { SearchPatientComponent } from './search-patient/search-patient.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PrescriptionComponent } from './prescription/prescription.component';
     PatientheaderComponent,
     DemographicsComponent,
     DiagnosisComponent,
-    PrescriptionComponent
+    PrescriptionComponent,
+    SearchPatientComponent
   ],
   imports: [
     BrowserModule,
