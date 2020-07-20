@@ -10,6 +10,9 @@ import { DemographicsComponent } from './demographics/demographics.component';
 import { DiagnosisComponent } from './diagnosis/diagnosis.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
 import { SearchPatientComponent } from './search-patient/search-patient.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientComponent } from './http/http.component';
+import { SharedInternalData } from './sharedData/sharedData';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,10 @@ import { SearchPatientComponent } from './search-patient/search-patient.componen
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientComponent,SharedInternalData],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

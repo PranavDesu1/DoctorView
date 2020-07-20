@@ -2,6 +2,10 @@
     <li *ngFor="let patient of patients"
     (click)="onSelect(patient)"
     class="list-group-item borderless">
-        <span class="badge badge-pill badge-secondary">{{patient.fname.charAt(0)}}{{patient.lname.charAt(0)}}</span>{{patient.fname}} {{patient.lname}}
+        <!-- <span class="badge badge-pill badge-secondary" >
+            <span *ngIf="patient.fname != ''">{{patient.fname.charAt(0)}}</span>
+            <span *ngIf="patient.lname != ''">{{patient.lname.charAt(0)}}</span>
+        </span> -->
+            {{patient.fname}} {{patient.lname}}
     </li>
 </ul>

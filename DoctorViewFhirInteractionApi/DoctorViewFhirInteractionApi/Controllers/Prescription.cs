@@ -2,9 +2,11 @@
 {
     using System.Net;
     using DoctorViewFhirInteractionApi.Interactions;
+    using Microsoft.AspNetCore.Cors;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Configuration;
 
+    [EnableCors("MyPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class Prescription : ControllerBase

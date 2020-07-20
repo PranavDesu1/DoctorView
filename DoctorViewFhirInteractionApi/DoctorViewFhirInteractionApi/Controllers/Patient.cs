@@ -2,9 +2,11 @@
 {
     using System.Net;
     using DoctorViewFhirInteractionApi.Interactions;
+    using Microsoft.AspNetCore.Cors;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Configuration;
 
+    [EnableCors("MyPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class Patient : ControllerBase
@@ -25,7 +27,8 @@
         {
             //https://localhost:44351/api/Patient/search?searchString=test
             var patientInteraction = new PatientInteraction(Configuration);
-            return Ok(patientInteraction.SearchPatients(searchString));
+            var a = patientInteraction.SearchPatients(searchString);
+            return Ok(a);
         }
     }
 }
