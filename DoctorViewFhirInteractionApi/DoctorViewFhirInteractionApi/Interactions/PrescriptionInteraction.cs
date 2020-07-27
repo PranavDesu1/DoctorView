@@ -31,14 +31,6 @@ namespace DoctorViewFhirInteractionApi.Interactions
             foreach (var resource in ReturnedSearchBundle.Entry)
             {
                 var prescription = (Prescription)resource.Resource;
-
-                var medication = (  (Hl7.Fhir.Model.ResourceReference)
-                                    ((Hl7.Fhir.Model.MedicationRequest)resource.Resource)?
-                                    .Medication).Reference;
-
-                var medicationResult = fhirClient.Read<Hl7.Fhir.Model.Medication>(medication);
-                prescription.Medicine = medicationResult.Code?.Coding.FirstOrDefault()?.Display;
-
                 prescriptionResults.Add(prescription);
             }
 

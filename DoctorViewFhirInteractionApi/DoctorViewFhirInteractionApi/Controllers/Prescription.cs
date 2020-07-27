@@ -25,7 +25,7 @@
         [ProducesResponseType(typeof(void), (int)HttpStatusCode.Forbidden)]
         public IActionResult FindDiagnosisByPatientId(string patientId)
         {
-            //https://localhost:44351/api/Prescription/findbypatientid?patientId=2716902
+            //https://localhost:44351/api/Prescription/findbypatientid?patientId=1980207
             var prescriptionInteraction = new PrescriptionInteraction(Configuration);
             return Ok(prescriptionInteraction.FindMedication(patientId));
         }
