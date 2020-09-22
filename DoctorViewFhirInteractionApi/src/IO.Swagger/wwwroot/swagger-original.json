@@ -1,0 +1,12 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://virtserver.swaggerhub.com/PranavDesu6/testexisting/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "paths" : { },
+  "components" : { }
+}
