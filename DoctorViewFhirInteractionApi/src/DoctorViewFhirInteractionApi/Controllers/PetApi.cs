@@ -62,8 +62,7 @@ namespace DoctorViewFhirInteractionApi.Controllers
 
             //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(404);
-            throw new NotImplementedException();
-            throw new NotImplementedException();
+
             throw new NotImplementedException();
         }
 
